@@ -12,9 +12,9 @@ const upload = multer({ storage: storage });
 
 // AWS SDK configuration
 const s3 = new AWS.S3({
-  accessKeyId: 'AKIA2NJWK77SIQN54CUT',
-  secretAccessKey: '9PY8l/Moo00jz8xuuSEasUowgnI4quzx26txQ5Sz',
-  region: 'ap-south-1',
+  accessKeyId: 'Your access Key ID',
+  secretAccessKey: 'Your secret access key',
+  region: 'S3 Bucket region',
 });
 
 // Endpoint to render the file upload form
@@ -31,7 +31,7 @@ app.post('/upload', upload.single('file'), (req, res) => {
   }
 
   const params = {
-    Bucket: 'nodejs-aws-nginx',
+    Bucket: 'Bucket name',
     Key: file.originalname,
     Body: file.buffer,
   };
